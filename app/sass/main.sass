@@ -1,0 +1,990 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+textarea:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+input:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+
+h1, .h1, h2, .h2, h3, .h3
+	font-weight: 800
+	color: #000
+	font-size: 48px
+	padding: 110px 0 25px 0
+	text-align: center
+	text-transform: uppercase
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+
+.btn
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 255px
+	height: 60px
+	background-color: $accent
+	border: 1px soilid $accent
+	border-radius: 30px
+	font-size: 18px
+	text-decoration: none
+	color: #fff
+	font-weight: bold
+	box-shadow: -3px 4px 65px 0px rgba(31, 39, 48, 0.19)
+	transition: .3s all ease
+	margin: 0 auto
+	cursor: pointer
+	&:hover
+		color: #fff
+		text-decoration: none
+		background-color: darken($accent, 10%)
+		box-shadow: -3px 4px 65px 0px rgba(31, 39, 48, 0.40)
+
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: 'Gilroy', sans-serif
+	overflow-x: hidden
+	color: $text
+	background-color: #fff
+
+.container
+	max-width: 1115px
+	padding:
+		right: $gutter/2
+		left: $gutter/2
+	margin:
+		left: auto
+		right: auto
+
+// Header
+.header
+	height: 118px
+	position: relative
+	&:before
+		content: ''
+		background-color: $lightBlue
+		position: absolute
+		top: 0
+		left: 0
+		width: 50%
+		height: 100%
+	&__bg-circle
+		position: absolute
+		top: 0
+		right: -90px
+		z-index: 100
+		width: 180px
+		height: 180px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		z-index: 100
+	.container
+		background: #fff
+		position: relative
+		height: 100%
+
+.logo
+	padding: 12px 0 0 0
+	margin-right: 140px
+	position: relative
+	height: 100%
+	background: $lightBlue
+	margin-left: -10px
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		right: -151px
+		width: 151px
+		height: 100%
+		background: url('../img/@2x/bg/line.png') no-repeat
+	img
+		width: 290px
+		margin-left: -5px
+
+.header-inner
+	display: flex
+	height: 100%
+
+.header-info
+	display: flex
+	position: relative
+	font-size: 18px
+	padding-top: 30px
+
+.adress
+	position: relative
+	&--active
+		.adress__window
+			display: block
+	&__town
+		cursor: pointer
+	&__close-btn
+		cursor: pointer
+	&__location_icon
+		color: $accent
+		margin-right: 5px
+		font-size: 22px
+	&__triangle_icon
+		color: $accent
+		margin-left: 5px
+	&__location
+		padding-left: 20px
+	&__window
+		display: none
+		position: absolute
+		top: 30px
+		left: 0
+		z-index: 10000000
+		background: #fff
+		padding: 20px
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		ul
+			list-style-type: none
+			padding-left: 0
+			li
+				margin-bottom: 10px
+				a
+					color: #000
+	&__close-btn
+		position: absolute
+		top: -14px
+		right: 4px
+		font-size: 40px
+		color: $lightBlue
+
+.phones
+	margin-left: 28px
+	a
+		color: #000
+		&:hover
+		text-decoration: none
+	&__icon
+		color: $accent
+		font-size: 22px
+		margin-right: 18px
+	&__number
+		&:last-child
+			padding-left: 36px
+
+
+.instagram
+	text-align: center
+	margin: 0 54px 0 38px
+	img
+		width: 40px
+		height: 40px
+
+.m-menu__active
+	.menu
+		display: block
+
+.instagram
+	svg
+		width: 40px
+		height: 40px
+		path
+			transition: all .3s ease
+		&:hover
+			.st0
+				fill: rgba(106, 167, 234, .8)
+
+.burger
+	height: 50px
+	width: 44px
+	font-size: 14px
+	cursor: pointer
+	text-transform: uppercase
+	align-items: center
+	.hamburger
+		margin-left: -15px
+		margin-top: -10px
+		.hamburger-inner
+			background-color: $lightBlue
+			&:after, &:before
+				background-color: $lightBlue
+	&__text
+		margin-top: -17px
+		font-size: 13px
+
+
+// Menu
+.menu
+	display: none
+	position: absolute
+	max-width: 385px
+	width: 100%
+	top: 118px
+	right: 0
+	background: #fff
+	padding: 22px  20px 40px 40px
+	z-index: 1000
+	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+	&__list
+		list-style-type: none
+		padding: 0
+	&__item
+		margin-bottom: 15px
+		position: relative
+		&:hover
+			.menu__submenu
+				display: block!important
+	&__link
+		color: #000
+		transition: all .3s ease
+		padding-bottom: 10px
+		&:hover
+			text-decoration: none
+	&__submenu
+		margin-top: 15px
+		display: none
+	&__sub-item
+		list-style-type: none
+	&__sub-link
+		color: #000
+		transition: all .3s ease
+		padding-bottom: 10px
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			background-color: $accent
+			width: 28px
+			height: 3px
+			top: 9px
+			left: -38px
+		&:hover
+			text-decoration: none
+
+// Promo
+.homepage-promo
+	position: relative
+	&__circle
+		width: 90px
+		height: 90px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		position: absolute
+		top: 50%
+		left: 50%
+		z-index: 100
+		margin-left: -221px
+		margin-top: 47px
+	&__arrows
+		position: absolute
+		top: 35%
+		left: 0
+		width: 100%
+		.container
+			position: relative
+		.y_arrow
+			position: absolute
+			top: 0
+			z-index: 10000
+			width: 38px
+			height: 38px
+			border: 3px solid #fff
+			color: $lightBlue
+			border-radius: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 28px
+			cursor: pointer
+			transition: all .3s ease
+			.fa
+				color: #fff
+			&:hover
+				background-color: #fff
+				.fa
+					color: $lightBlue
+		.y_prevArrow
+			left: -10px
+			.fa
+				height: 29px
+				width: 13px
+		.y_nextArrow
+			right: -10px
+			.fa
+				height: 29px
+				width: 7px
+.homepage-slider
+	position: relative
+	&__slide
+		position: relative
+	&__img
+		height: 640px
+		width: 100%
+		position: relative
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__info
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		color: #fff
+	&__info-inner
+		position: relative
+		padding-left: 75px
+	&__title
+		font-weight: 800
+		font-size: 91px
+		line-height: 95px
+		margin-top: 100px
+	&__text
+		font-size: 30px
+		font-weight: 500
+	&__old-price
+		font-size: 30px
+		font-style: italic
+		text-decoration: line-through
+		position: absolute
+		top: 129px
+		left: 248px
+	&__price
+		font-size: 54px
+		font-weight: 700
+		margin-top: 10px
+	&__btn
+		background-color: $malina
+		margin: 0
+		margin-top: 20px
+		&:hover
+			background-color: darken($malina, 10%)
+
+// Sect-services
+.sect-services
+	background: url(../img/@2x/bg/cells.png) no-repeat left -50px top -150px, url('../img/@2x/bg/planet.png') no-repeat right top 130px
+.advantage
+		height: 0
+.advantage-inner
+	display: flex
+	justify-content: space-between
+.advantage-item
+	position: relative
+	background: #fff
+	z-index: 1000
+	max-width: 350px
+	width: 100%
+	margin-top: -60px
+	height: 120px
+	box-shadow: -4px 4px 31.68px 0.32px rgba(0, 0, 0, 0.27)
+	border-radius: 10px
+	display: flex
+	justify-content: center
+	align-items: center
+	&__text
+		max-width: 185px
+		font-weight: bold
+		margin-left: 15px
+		max-height: 87px
+		overflow-y: hidden
+
+.services
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+.services-item
+	box-shadow: 0px 7px 23.76px 0.24px rgba(0, 0, 0, 0.14)
+	width: 350px
+	height: 138px
+	margin-bottom: 22px
+	padding: 10px
+	overflow: hidden
+	a
+		color: #000
+		display: flex
+		align-items: center
+		&:hover
+			text-decoration: none
+	&__title
+		font-weight: bold
+		font-size: 22px
+		margin-left: 15px
+		max-width: 205px
+	&__img
+		width: 100px
+		height: 100px
+		background-color: $accent
+		border-radius: 100%
+		position: relative
+		img
+			width: 100px
+	&:nth-child(1)
+		img
+			width: 70px
+			position: absolute
+			top: 0
+			left: 13px
+	&:nth-child(2)
+		img
+			width: 132px
+			position: absolute
+			top: 24px
+			left: -21px
+	&:nth-child(3)
+		img
+			width: 87px
+			position: absolute
+			top: -24px
+			left: 13px
+	&:nth-child(4)
+		img
+			width: 108px
+			position: absolute
+			top: 18px
+			left: -1px
+	&:nth-child(5)
+		img
+			width: 132px
+			position: absolute
+			top: 0px
+			left: -21px
+	&:nth-child(6)
+		img
+			width: 92px
+			position: absolute
+			top: -12px
+			left: -3px
+	&:nth-child(7)
+		img
+			width: 73px
+			position: absolute
+			top: -4px
+			left: 20px
+	&:nth-child(8)
+		img
+			width: 82px
+			position: absolute
+			top: 7px
+			left: 7px
+	&:nth-child(9)
+		img
+			width: 65px
+			position: absolute
+			top: -1px
+			left: 21px
+
+
+// Section Map
+.sect-map
+	position: relative
+	padding-bottom: 90px
+	background: url('../img/@2x/bg/cells-map.png') no-repeat bottom right
+	&__jaws
+		position: absolute
+		bottom: -40px
+		right: 35px
+		max-width: 296px
+		img
+			width: 100%
+			height: 100%
+	&__left-circle
+		position: absolute
+		top: -43px
+		left: -59px
+		width: 140px
+		height: 140px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -10px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		z-index: 100
+	&__btn
+		margin: 80px auto
+	&__inner
+		position: relative
+	&__img
+		margin-left: 165px
+	&__info
+		position: absolute
+		top: -80px
+		left: -42px
+		width: 355px
+		height: 355px
+		border-radius: 100%
+		background-color: $accent
+		box-shadow: 0px 7px 23.76px 0.24px rgba(0, 0, 0, 0.14)
+		color: #fff
+		display: flex
+		justify-content: center
+		flex-direction: column
+		padding-left: 30px
+		a
+			color: #fff
+	&__adress
+		.adress__location
+			font-size: 18px
+			padding-left: 35px
+		.adress__location_icon
+			color: #fff
+			margin-right: 20px
+		.adress__triangle_icon
+			color: #fff
+			transform:  rotate(-90deg)
+		.adress__dinamik_town
+			font-weight: 800
+			font-size: 18px
+			position: relative
+			cursor: text
+			&:after
+				content: "\f0da"
+				font-family: FontAwesome
+				position: absolute
+				top: -1px
+				right: -57px
+				width: 20px
+				height: 20px
+				font-size: 19px
+	&__phones
+		margin: 30px 0 0 0
+		font-weight: 500
+		font-size: 20px
+		.phones__icon
+			color: #fff
+	&__info-circle
+		position: absolute
+		top: 50px
+		right: 11px
+		width: 47px
+		height: 47px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		z-index: 100
+
+
+// Section Gallery
+.sect-gallery
+	padding-bottom: 120px
+	&__inner
+		position: relative
+		max-width: 920px
+		margin: 0 auto
+	&__bg-cells
+		position: absolute
+		top: 59px
+		left: -223px
+	&__bg-circle
+		position: absolute
+		top: 53px
+		right: -55px
+		z-index: 100
+		width: 110px
+		height: 110px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -10px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		z-index: 100
+	&__h2
+		padding-top: 30px
+.gallery-slider
+	.gallery-slide
+		height: 386px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+.gallery-dotted
+	margin: 26px -15px 18px -15px
+	&__item
+		width: 160px
+		height: 100px
+		padding: 0 15px
+		cursor: pointer
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+.gallery__arrows
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	.container
+		position: relative
+	.g_arrow
+		position: absolute
+		top: -100px
+		z-index: 10000
+		width: 38px
+		height: 38px
+		border: 3px solid $accent
+		color: $lightBlue
+		border-radius: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 28px
+		cursor: pointer
+		transition: all .3s ease
+		.fa
+			color: $accent
+		&:hover
+			background-color: $lightBlue
+			.fa
+				color: #fff
+	.g_prevArrow
+		left: -56px
+		.fa
+			height: 29px
+			width: 13px
+	.g_nextArrow
+		right: -56px
+		.fa
+			height: 29px
+			width: 7px
+
+.progress
+	display: block
+	width: 100%
+	height: 10px
+	border-radius: 10px
+	overflow: hidden
+	background-color: #f5f5f5
+	background-image: linear-gradient(to right, $accent, $accent)
+	background-repeat: no-repeat
+	background-size: 0 100%
+	transition: background-size .4s ease-in-out
+
+.sr-only
+	position: absolute
+	width: 1px
+	height: 1px
+	padding: 0
+	margin: -1px
+	overflow: hidden
+	clip: rect(0, 0, 0, 0)
+	border: 0
+
+// Form
+.sect-form
+	background: url('../img/@2x/bg/form_bg.jpg') no-repeat center center
+	background-size: cover
+	padding: 70px 10px 58px 10px
+	position: relative
+	&__cell-bg
+		position: absolute
+		background: url('../img/@2x/bg/cells-form-left.png') no-repeat top 90px left -100px, url('../img/@2x/bg/cells-form-right.png') no-repeat bottom 100px right -40px
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+.form
+	max-width: 542px
+	border: 5px solid #fff
+	position: relative
+	display: flex
+	margin: 0 auto
+	flex-direction: column
+	width: 100%
+	padding: 30px 85px 30px 85px
+	color: #fff
+	&__bg-circle
+		position: absolute
+		left: -58px
+		top: -48px
+		z-index: 100000
+		width: 100px
+		height: 100px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, 1) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		z-index: 100
+	&__desc
+		font-size: 24px
+		line-height: 28px
+		text-transform: uppercase
+		font-weight: 500
+		text-align: center
+		margin: 5px 0 10px
+	&__price
+		font-size: 43px
+		font-weight: bold
+	&__old-price
+		font-size: 27px
+		font-weight: 500
+		text-decoration: line-through
+		margin-left: 5px
+	.form__p
+		color: #363636
+		text-align: center
+		font-size: 11px
+		max-width: 300px
+		margin: 0 auto
+		line-height: 14px
+	.btn
+		margin-top: 30px
+		width: 100%
+		background: #fff
+		color: $accent
+		font-weight: 500
+		font-size: 20px
+		border: 2px solid #fff
+		&:hover
+			background: $accent
+			color: #fff
+			border: 2px solid #fff
+	.h3
+		font-size: 60px
+		line-height: 55px
+		font-weight: bold
+		color: #fff
+		margin: 0
+		text-align: center
+		padding: 0
+	input, textarea
+		border: 2px solid #e2e2e2	
+		padding: 9px 9px 9px 30px
+		color: #363636
+		margin-bottom: 10px
+		font-size: 14px
+		&::-webkit-input-placeholder
+			color: #363636
+			opacity: 1
+		&::-moz-placeholder
+			color: #363636
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #363636
+
+.wrap-inpute
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	margin-top: 30px
+	&__item
+		width: 100%
+		label
+			display: block
+			font-size: 13px
+		input
+			font-weight: 200
+			border: 1px solid #fff
+			width: 100%
+			height: 54px
+			max-width: 360px
+			border-radius: 30px
+			background: rgba(255, 255, 255, .5)
+			margin-bottom: 14px
+label
+	font-size: 13px
+textarea
+	border-radius: 30px
+button.mfp-close
+	padding: 20px	
+.mfp-close //картинка закрытися popup
+	width: 22px
+	height: 22px
+	padding: 0
+	right: 8px
+	top: 5px
+	.fa
+		display: block
+
+.input-cheked
+	padding-left: 40px
+	max-width: 520px
+	margin: 20px auto 0
+	position: relative
+	font-weight: 200
+	cursor: pointer
+	&__underline
+		text-decoration: underline
+		font-weight: 500
+		display: block
+		cursor: pointer
+	label
+		line-height: 16px
+		cursor: pointer
+	input
+		display: none
+		cursor: pointer
+	input[type=checkbox]:checked + label:before
+		content: "\f00c"
+		font-family: "FontAwesome"
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, .2)
+		font-size: 15px
+		color: $accent
+		text-align: center
+		line-height: 15px
+		position: absolute
+		top: 10px
+		left: 3px
+		z-index: 1
+	&__text
+		position: relative
+		a
+			color: $text
+			text-decoration: underline
+		&:before
+			content: ''
+			position: absolute
+			background: #fff
+			top: 6px
+			left: -39px
+			width: 20px
+			height: 20px
+			cursor: pointer
+
+
+//  Modal windwo
+.close
+	font-size: 50px
+	position: absolute
+	top: 10px
+	right: 30px
+.success-window
+	.h2
+		color: #fff
+		padding: 100px 0 80px
+
+.form-window
+	.modal-body
+		background: $lightBlue
+	&__title
+		padding: 20px 10px
+		text-align: center
+		font-size: 50px
+		font-weight: bold
+
+
+// Clients slider
+.sect-clients
+	padding: 30px 0	
+	background: #fff
+	position: relative
+.clients-slider
+	margin: 0 -15px
+.clients-slide
+	width: 160px
+	height: 70px
+	padding: 0 15px
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+.clients__arrows
+	position: absolute
+	top: 35%
+	left: 0
+	width: 100%
+	.container
+		position: relative
+	.c_arrow
+		position: absolute
+		top: -8px
+		z-index: 10000
+		width: 38px
+		height: 38px
+		border: 3px solid $accent
+		color: $accent
+		border-radius: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 28px
+		cursor: pointer
+		transition: all .3s ease
+		.fa
+			color: $accent
+		&:hover
+			background-color: $accent
+			.fa
+				color: #fff
+	.c_prevArrow
+		left: -60px
+		.fa
+			height: 29px
+			width: 13px
+	.c_nextArrow
+		right: -60px
+		.fa
+			height: 29px
+			width: 7px
+
+
+// Footer
+.footer
+	background-color: $blue
+	padding: 30px 0 50px 0
+	color: #fff
+	font-size: 14px
+	a
+		color: #fff
+	&__inner
+		display: flex
+		justify-content: space-between
+	&__logo
+		img
+			display: block
+	&__copy
+		font-size: 12.5px
+		display: block
+		margin-top: 15px
+		color: #3e8fe6!important
+	&__menu
+	&__list
+		padding-left: 0
+	&__item
+		list-style-type: none
+		margin-bottom: 15px
+	&__contacts
+		display: flex
+	&__adress
+		max-width: 160px
+		position: relative
+		.adress__location_icon
+			position: absolute
+			top: 2px
+			left: -26px
+		.adress__location
+			padding-left: 0
+	&__developer
+		display: flex
+		align-items: center
+		margin-top: 40px
+		img
+			margin-left: 30px
