@@ -31,13 +31,47 @@ input:focus
 	&::-ms-input-placeholder
 		color: transparent!important
 
-h1, .h1, h2, .h2, h3, .h3
+h1, .h1,
+	font-size: 53px
+	font-weight: bold
+	margin: 60px 0 35px 0
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		bottom: -15px
+		left: 0
+		background: $lightBlue
+		width: 122px
+		height: 6px
+h2, .h2, h3, .h3
 	font-weight: 800
 	color: #000
 	font-size: 48px
 	padding: 110px 0 25px 0
 	text-align: center
 	text-transform: uppercase
+
+.lowertitle
+	font-size: 30px
+	font-weight: bold
+	padding: 60px 0
+	position: relative
+	text-transform: none
+	&:after
+		content: ''
+		position: absolute
+		bottom: 45px
+		left: 50%
+		margin-left: -56px
+		width: 112px
+		height: 4px
+		background: $lightBlue
+
+.uppercasetitle
+		font-size: 30px
+		font-weight: bold
+		padding: 65px 0 40px 0
 
 .img-responsive
 	display: block
@@ -138,6 +172,7 @@ body
 .header-inner
 	display: flex
 	height: 100%
+	position: relative
 
 .header-info
 	display: flex
@@ -229,6 +264,10 @@ body
 	cursor: pointer
 	text-transform: uppercase
 	align-items: center
+	position: fixed
+	right: 10%
+	top: 28px
+	z-index: 1000000
 	.hamburger
 		margin-left: -15px
 		margin-top: -10px
@@ -244,15 +283,16 @@ body
 // Menu
 .menu
 	display: none
-	position: absolute
+	position: fixed
 	max-width: 385px
 	width: 100%
 	top: 118px
-	right: 0
+	right: 198px
 	background: #fff
 	padding: 22px  20px 40px 40px
 	z-index: 1000
 	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+	z-index: 10000000000
 	&__list
 		list-style-type: none
 		padding: 0
@@ -293,17 +333,12 @@ body
 .homepage-promo
 	position: relative
 	&__circle
-		width: 90px
-		height: 90px
-		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
-		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
-		border-radius: 100%
 		position: absolute
 		top: 50%
 		left: 50%
 		z-index: 100
-		margin-left: -221px
-		margin-top: 47px
+		margin-left: -169px
+		margin-top: 140px
 	&__arrows
 		position: absolute
 		top: 35%
@@ -387,8 +422,27 @@ body
 		background-color: $malina
 		margin: 0
 		margin-top: 20px
+		position: relative
+		z-index: 100000
 		&:hover
 			background-color: darken($malina, 10%)
+
+// Circle moving
+.eyes-wrapper
+	width: 110px
+	height: 300px
+.eyes-wrapper__inner__eye
+	background: none
+	overflow: visible
+.eyes-wrapper__inner__eye__iris
+	width: 90px
+	height: 90px
+	background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+	border-radius: 100%
+	border:: none
+	&:before, &:after
+		display: none
 
 // Sect-services
 .sect-services
@@ -422,6 +476,132 @@ body
 	display: flex
 	justify-content: space-between
 	flex-wrap: wrap
+	height: 480px
+
+.services-row--one
+	.services-item
+		&:nth-child(1)
+			img
+				width: 70px
+				position: absolute
+				top: 0
+				left: 13px
+			&:hover
+				img
+					width: 125px
+					position: absolute
+					top: 53px
+					right: 9px
+					left: auto
+		&:nth-child(2)
+			img
+				width: 108px
+				position: absolute
+				top: 11px
+				left: -1px
+			&:hover
+				img
+					width: 125px
+					position: absolute
+					top: 99px
+					right: 7px
+					left: auto
+		&:nth-child(3)
+			img
+				width: 73px
+				position: absolute
+				top: -4px
+				left: 20px
+			&:hover
+				img
+					width: 128px
+					position: absolute
+					top: 54px
+					right: 0px
+					left: auto
+.services-row--two
+	.services-item
+		&:nth-child(1)
+			img
+				width: 132px
+				position: absolute
+				top: 24px
+				left: -21px
+			&:hover
+				img
+					width: 180px
+					position: absolute
+					top: 105px
+					right: -20px
+					left: auto
+		&:nth-child(2)
+			img
+				width: 132px
+				position: absolute
+				top: 0px
+				left: -21px
+			&:hover
+				img
+					width: 196px
+					position: absolute
+					top: 73px
+					right: -20px
+					left: auto
+		&:nth-child(3)
+			img
+				width: 82px
+				position: absolute
+				top: 7px
+				left: 7px
+			&:hover
+				img
+					width: 131px
+					position: absolute
+					top: 72px
+					right: 7px
+					left: auto
+
+.services-row--three
+	.services-item
+		&:nth-child(1)
+			img
+				width: 87px
+				position: absolute
+				top: -24px
+				left: 13px
+			&:hover
+				img
+					width: 133px
+					position: absolute
+					top: 35px
+					right: 5px
+					left: auto
+		&:nth-child(2)
+			img
+				width: 92px
+				position: absolute
+				top: -12px
+				left: -3px
+			&:hover
+				img
+					width: 133px
+					position: absolute
+					top: 51px
+					right: 17px
+					left: auto	
+		&:nth-child(3)
+			img
+				width: 65px
+				position: absolute
+				top: -1px
+				left: 21px
+			&:hover
+				img
+					width: 95px
+					position: absolute
+					top: 68px
+					right: 29px
+					left: auto
 .services-item
 	box-shadow: 0px 7px 23.76px 0.24px rgba(0, 0, 0, 0.14)
 	width: 350px
@@ -429,86 +609,77 @@ body
 	margin-bottom: 22px
 	padding: 10px
 	overflow: hidden
+	transition: all .3s ease
+	background: #fff
+	display: flex
+	align-items: center
+	&:hover
+		position: relative
+		z-index: 1000
+		height: 220px
+		display: flex
+		flex-direction: column
+		padding-left: 156px
+		overflow: hidden
+		.services-item__img
+			width: 300px
+			height: 300px
+			position: absolute
+			top: -31px
+			left: -156px
+		.services-item__list
+			display: block
+		.services-item__title
+			margin-top: 18px
+			margin-left: -2px
+			font-size: 20px
+			line-height: 22px
 	a
 		color: #000
 		display: flex
 		align-items: center
-		&:hover
-			text-decoration: none
 	&__title
 		font-weight: bold
 		font-size: 22px
-		margin-left: 15px
 		max-width: 205px
+		margin-left: 20px
+	&__list
+		display: none
+		margin-top: 5px
+		padding-left: 18px
+		list-style-type: none
+		li
+			font-size: 16px
+			position: relative
+			font-weight: normal
+			&:before
+				content: ''
+				position: absolute
+				top: 11px
+				left: -18px
+				height: 1px
+				width: 11px
+				background-color: $lightBlue
 	&__img
 		width: 100px
 		height: 100px
 		background-color: $accent
 		border-radius: 100%
 		position: relative
+		transition: all .3s ease
 		img
 			width: 100px
-	&:nth-child(1)
-		img
-			width: 70px
-			position: absolute
-			top: 0
-			left: 13px
-	&:nth-child(2)
-		img
-			width: 132px
-			position: absolute
-			top: 24px
-			left: -21px
-	&:nth-child(3)
-		img
-			width: 87px
-			position: absolute
-			top: -24px
-			left: 13px
-	&:nth-child(4)
-		img
-			width: 108px
-			position: absolute
-			top: 18px
-			left: -1px
-	&:nth-child(5)
-		img
-			width: 132px
-			position: absolute
-			top: 0px
-			left: -21px
-	&:nth-child(6)
-		img
-			width: 92px
-			position: absolute
-			top: -12px
-			left: -3px
-	&:nth-child(7)
-		img
-			width: 73px
-			position: absolute
-			top: -4px
-			left: 20px
-	&:nth-child(8)
-		img
-			width: 82px
-			position: absolute
-			top: 7px
-			left: 7px
-	&:nth-child(9)
-		img
-			width: 65px
-			position: absolute
-			top: -1px
-			left: 21px
 
 
 // Section Map
 .sect-map
+	height: 600px
 	position: relative
 	padding-bottom: 90px
-	background: url('../img/@2x/bg/cells-map.png') no-repeat bottom right
+	background-image: url('../img/@2x/bg/cells-map.png')
+	background-attachment: fixed
+	background-position: top right 100px
+	background-repeat: no-repeat
 	&__jaws
 		position: absolute
 		bottom: -40px
@@ -594,6 +765,7 @@ body
 // Section Gallery
 .sect-gallery
 	padding-bottom: 120px
+	background: #f7f7f7
 	&__inner
 		position: relative
 		max-width: 920px
@@ -721,15 +893,11 @@ body
 	color: #fff
 	&__bg-circle
 		position: absolute
-		left: -58px
-		top: -48px
-		z-index: 100000
-		width: 100px
-		height: 100px
-		background: linear-gradient(-124deg, rgba(167, 198, 232, 1) 0%, rgba(255,2255,255,1) 110%)
-		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
-		border-radius: 100%
-		z-index: 100
+		left: 4px
+		top: -166px
+		.eyes-wrapper__inner__eye__iris
+			width: 100px
+			height: 100px
 	&__desc
 		font-size: 24px
 		line-height: 28px
@@ -976,15 +1144,430 @@ button.mfp-close
 	&__adress
 		max-width: 160px
 		position: relative
+		.adress__town
+		 	margin-bottom: 3px
 		.adress__location_icon
 			position: absolute
 			top: 2px
 			left: -26px
 		.adress__location
 			padding-left: 0
+	&__phones
+		.phones__number
+			margin-bottom: 3px
 	&__developer
 		display: flex
 		align-items: center
 		margin-top: 40px
 		img
 			margin-left: 30px
+
+
+//About us page
+.promo
+	height: 200px
+	background: url('../img/_src/bg/about_us_bg.jpg') no-repeat center center
+	background-size: cover
+
+.breadcrumb
+	display: flex
+	padding-top: 10px
+	margin-left: -20px
+	list-style-type: none	
+	padding-left: 0
+	font-weight: 200
+	font-size: 14px	
+	position: relative
+	color: #fff
+	&--dark
+		color: #000
+		a
+			color: #000!important
+	a
+		color: #fff
+	li
+		&:after
+			content: '/'
+			padding: 0 5px
+		&:last-child
+			&:after
+				display: none
+
+// about-us clinic
+.about_clinic
+	position: relative
+	background: url('../img/@2x/bg/planet.png') no-repeat top 50px right
+	&_left_bg
+		position: absolute
+		top: 100px
+		left: -110px
+		transform: rotate(-64deg)
+	&_desc
+		font-weight: bold
+		font-size: 18px
+		max-width: 812px
+	&_inner
+		margin-top: 30px
+		display: flex
+		justify-content: space-between
+
+.how_we_work
+	&__title
+		font-size: 24px
+		line-height: 30px
+		font-weight: bold
+		max-width: 334px
+		padding-bottom: 20px
+	&__list
+		padding-left: 18px
+		list-style-type: none
+		width: 588px
+		display: flex
+		flex-wrap: wrap
+		li
+			position: relative
+			width: 245px
+			margin-right: 40px
+			margin-bottom: 20px
+			&:before
+				content: ''
+				position: absolute
+				top: 11px
+				left: -18px
+				width: 12px
+				height: 2px
+				background-color: $lightBlue
+
+.about_licenses
+	position: relative
+	&_title
+		font-size: 24px
+		font-weight: bold
+		margin-bottom: 20px
+	&_slider
+		width: 360px
+		height: 220px
+	&_slide
+		height: 220px
+		img
+			width: 100%
+			height: 100%
+	&_arrows
+		position: absolute
+		top: 137px
+		left: 0
+		width: 100%
+		.container
+			position: relative
+		.l_arrow
+			position: absolute
+			top: 0
+			z-index: 10000
+			width: 38px
+			height: 38px
+			border: 3px solid $accent
+			color: #fff
+			background: $accent
+			border-radius: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 28px
+			cursor: pointer
+			transition: all .3s ease
+			.fa
+				color: #fff
+			&:hover
+				background-color: #fff
+				.fa
+					color: $lightBlue
+		.l_prevArrow
+			left: -70px
+			.fa
+				height: 29px
+				width: 13px
+		.l_nextArrow
+			right: -70px
+			.fa
+				height: 29px
+				width: 7px
+
+.about_clinic_footer
+	&_desc
+		font-weight: bold
+		font-size: 24px
+		margin-top: -15px
+		margin-bottom: 15px
+	&_text
+		max-width: 540px
+
+// Director section
+.sect-director
+	height: 384px
+	position: relative
+	padding-top: 80px
+	background: url('../img/@2x/bg/cells-director.png')
+	background-attachment: fixed
+	background-position: top right -400px
+	background-repeat: no-repeat
+	.gutter
+		background: $lightBlue
+	&_wrap
+		display: flex
+	&_info
+		padding: 40px 0 100px 90px
+		color: #fff
+		position: relative
+		max-width: 624px
+		height: 100%
+		background: $lightBlue
+		p
+			margin-bottom: 0
+			line-height: 18px
+		&:before
+			content: ''
+			position: absolute
+			top: 23px
+			left: -84px
+			width: 70px
+			height: 60px
+			background: url('../img/quotes.svg') no-repeat
+			background-size: cover
+			opacity: .4
+			transform: scale(-1,-1)
+		&__text
+			height: 164px
+			overflow: hidden
+	&_sing
+		float: right
+		padding-top: 20px
+		position: relative
+		z-index: 100
+	&_img
+		position: relative
+		height: 304px
+		width: 100px
+		background: $lightBlue
+		img
+			position: absolute
+			top: -53px
+			left: -62px
+
+// Advantage section
+.sect-advantage
+	padding-bottom: 40px
+	background: url('../img/@2x/bg/advantage_bg.jpg') no-repeat center
+	background-size: cover
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 142px
+		left: -256px
+		width: 388px
+		height: 415px
+		background: url('../img/@2x/bg/planet-full.png') no-repeat center
+	&:after
+		content: ''
+		position: absolute
+		top: 123px
+		right: -92px
+		width: 255px
+		height: 367px
+		background: url('../img/@2x/bg/cells-form-right.png') no-repeat center
+.sect-advantage-items
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	max-width: 1000px
+	margin: 0 auto
+.sect-advantage-item
+	text-align: center
+	width: 33%
+	margin-bottom: 20px
+	&__text
+		height: 60px
+		overflow: hidden
+		font-size: 18px
+		line-height: 20px
+		font-weight: 500
+		margin-top: 10px
+		max-width: 245px
+		margin: 10px auto 0 auto
+
+// Specialists section
+.sect-specialists
+.specialist_inner
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+.specialist_item
+	max-width: 350px
+	background: #fff
+	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+	margin-bottom: 50px
+	cursor: pointer
+	transition: .5s transform ease
+	&:hover
+		transform: translateY(-40px)
+		border: 1px solid $accent
+	&__img
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__name
+		font-weight: bold
+		font-size: 20px
+		margin: 15px 0 10px 20px
+		padding-bottom: 10px
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 40px
+			background: $lightBlue
+			height: 3px
+	&__position
+		font-size: 14px
+		font-weight: 200
+		margin-left: 20px
+		padding-bottom: 20px
+
+
+// Akcii page
+.sect-akcii
+	position: relative
+	&_bg
+		position: absolute
+		top: 27px
+		right: -100px
+		transform: rotate(-37deg)
+.akcii_slider .slick-dots
+	display: flex
+	justify-content: center
+	margin-top: 10px
+	li
+		list-style-type: none
+		width: 10px
+		height: 10px
+		border-radius: 100%
+		background: #d4d4d4
+		margin-right: 10px
+		cursor: pointer
+		&:last-child
+			margin-right: 0
+		button
+			display: none
+	.slick-active
+		background: $lightBlue
+
+// News section
+
+.a-news
+	margin-top: 30px
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	height: 840px 
+.a-new
+	max-width: 350px
+	width: 100%
+	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+	margin-bottom: 35px
+	cursor: pointer
+	transition: .5s transform ease
+	&:hover
+		transform: translateY(-40px)
+		border: 1px solid $accent
+	a
+		color: #000
+		&:hover
+			text-decoration: none
+	&__img
+		position: relative
+		height: 175px
+		color: #fff
+		font-weight: bold
+		font-size: 12px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__date
+		position: absolute
+		bottom: 12px
+		right: 80px
+	&__traffic
+		position: absolute
+		bottom: 12px
+		right: 16px
+		display: flex
+		align-items: center
+		img
+			width: 18px
+			height: 14px
+			margin-right: 7px
+	&__info
+		padding: 20px 20px 35px 20px
+	&__title
+		font-weight: bold
+		margin-bottom: 5px
+		font-size: 14px
+		height: 40px
+		overflow: hidden
+	&__desc
+		font-size: 13px
+		height: 55px
+		overflow: hidden
+
+// PAGINATION
+.pagination
+	&_list
+		display: flex
+		justify-content: center
+		list-style-type: none	
+		margin-bottom: 50px
+		li
+			display: flex
+			align-items: center
+			margin-right: 10px
+			a
+				font-size: 18px
+				font-weight: 200
+				transition: .3s all ease
+				&:hover
+					font-weight: bold
+					color: $lightBlue
+					text-decoration: none
+			&:first-child
+				margin-right: 10px
+				.fa
+					height: 29px
+					width: 13px
+			&:last-child
+				margin-left: 10
+				margin-right: 0
+				.fa
+					height: 29px
+					width: 7px
+		.arrow
+			width: 38px
+			height: 38px
+			border: 3px solid $lightBlue
+			color: #fff
+			border-radius: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 28px
+			cursor: pointer
+			transition: all .3s ease
+			.fa
+				color: $lightBlue
+			&:hover
+				background-color: $lightBlue
+				.fa
+					color: #fff
