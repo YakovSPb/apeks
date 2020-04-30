@@ -36,6 +36,13 @@ h1, .h1,
 	font-weight: bold
 	margin: 60px 0 35px 0
 	position: relative
+	+media-breakpoint-down(md)
+		font-size: 35px
+		line-height: 40px
+		margin: 15px 0 35px 0
+	+media-breakpoint-down(xs)
+		font-size: 24px
+		line-height: 28px
 	&:after
 		content: ''
 		position: absolute
@@ -51,6 +58,11 @@ h2, .h2, h3, .h3
 	padding: 110px 0 25px 0
 	text-align: center
 	text-transform: uppercase
+	+media-breakpoint-down(md)
+		padding: 20px 0
+	+media-breakpoint-down(sm)
+		font-size: 35px
+		padding-bottom: 10px
 
 .lowertitle
 	font-size: 30px
@@ -67,11 +79,15 @@ h2, .h2, h3, .h3
 		width: 112px
 		height: 4px
 		background: $lightBlue
+	+media-breakpoint-down(md)
+		padding-top: 30px
 
 .uppercasetitle
 		font-size: 30px
 		font-weight: bold
 		padding: 65px 0 40px 0
+		+media-breakpoint-down(md)
+			padding: 30px 0
 
 .img-responsive
 	display: block
@@ -122,10 +138,38 @@ body
 		left: auto
 		right: auto
 
+#topNubex
+	position: fixed
+	width: 40px
+	height: 40px
+	z-index: 10000
+	right: 25px
+	bottom: 232px
+	border: 1px solid $blue
+	color: $blue
+	background: #fff
+	border-radius: 100%
+	opacity: .6
+	transition: all .3s ease
+	+media-breakpoint-down(lg)
+		bottom: 15px
+		right: 15px
+	&:hover
+		text-decoration: none
+		opacity: 1
+	.fa
+		color: $blue
+		font-size: 30px
+		margin-left: 9px
+		margin-top: 1px
+
 // Header
 .header
 	height: 118px
 	position: relative
+	+media-breakpoint-down(md)
+		height: auto
+		background: $accent
 	&:before
 		content: ''
 		background-color: $lightBlue
@@ -136,20 +180,24 @@ body
 		height: 100%
 	&__bg-circle
 		position: absolute
-		top: 0
+		top: 100px
 		right: -90px
 		z-index: 100
 		width: 180px
 		height: 180px
-		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
-		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
 		border-radius: 100%
 		z-index: 100
+		+media-breakpoint-down(lg)
+			display: none
+		.eyes-wrapper__inner__eye__iris
+			width: 180px
+			height: 180px
 	.container
 		background: #fff
 		position: relative
 		height: 100%
-
+		+media-breakpoint-down(md)
+			background: $accent
 .logo
 	padding: 12px 0 0 0
 	margin-right: 140px
@@ -157,6 +205,10 @@ body
 	height: 100%
 	background: $lightBlue
 	margin-left: -10px
+	+media-breakpoint-down(lg)
+		margin-right: 100px
+		+media-breakpoint-down(md)
+			margin-right: 0
 	&:after
 		content: ''
 		position: absolute
@@ -165,20 +217,48 @@ body
 		width: 151px
 		height: 100%
 		background: url('../img/@2x/bg/line.png') no-repeat
+		+media-breakpoint-down(md)
+			display: none
 	img
 		width: 290px
 		margin-left: -5px
+		+media-breakpoint-down(xs)
+			width: 237px
+			margin-left: 10px
 
 .header-inner
 	display: flex
 	height: 100%
 	position: relative
+	+media-breakpoint-down(md)
+		flex-direction: column
+		align-items: center
+		+media-breakpoint-down(xs)
+			align-items: flex-start
 
 .header-info
 	display: flex
 	position: relative
 	font-size: 18px
 	padding-top: 30px
+	+media-breakpoint-down(md)
+		width: 100%
+		flex-direction: column-reverse
+		align-items: center
+		justify-content: center
+		text-align: center
+		padding-bottom: 20px
+	.adress
+		width: 266px
+		+media-breakpoint-down(lg)
+			width: 100%
+		+media-breakpoint-down(md)
+			margin-bottom: 10px
+	.phones
+		width: 187px
+		+media-breakpoint-down(lg)
+			width: 100%
+			margin-bottom: 10px
 
 .adress
 	position: relative
@@ -193,9 +273,13 @@ body
 		color: $accent
 		margin-right: 5px
 		font-size: 22px
+		+media-breakpoint-down(md)
+			color: #fff
 	&__triangle_icon
 		color: $accent
 		margin-left: 5px
+		+media-breakpoint-down(md)
+			color: #fff
 	&__location
 		padding-left: 20px
 	&__window
@@ -206,7 +290,10 @@ body
 		z-index: 10000000
 		background: #fff
 		padding: 20px
-		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+		+media-breakpoint-down(md)
+			left: 50%
+			margin-left: -76px
 		ul
 			list-style-type: none
 			padding-left: 0
@@ -223,6 +310,8 @@ body
 
 .phones
 	margin-left: 28px
+	+media-breakpoint-down(md)
+		margin-left: 0
 	a
 		color: #000
 		&:hover
@@ -231,14 +320,28 @@ body
 		color: $accent
 		font-size: 22px
 		margin-right: 18px
+		+media-breakpoint-down(md)
+			color: #fff
+			margin-right: 8px
 	&__number
 		&:last-child
 			padding-left: 36px
+			+media-breakpoint-down(md)
+				padding-left: 48px
 
 
 .instagram
 	text-align: center
 	margin: 0 54px 0 38px
+	+media-breakpoint-down(md)
+		margin: 0
+		position: absolute
+		top: -25px
+		right: 23px
+	+media-breakpoint-down(xs)
+		top: -22px
+		right: 9px
+		transform: scale(.8)
 	img
 		width: 40px
 		height: 40px
@@ -253,9 +356,14 @@ body
 		height: 40px
 		path
 			transition: all .3s ease
+		+media-breakpoint-down(md) 
+			.st0
+				fill: rgba(255, 255, 255, 1)
 		&:hover
 			.st0
 				fill: rgba(106, 167, 234, .8)
+				+media-breakpoint-down(md)
+					fill: rgba(255, 255, 255, .8)
 
 .burger
 	height: 50px
@@ -265,16 +373,30 @@ body
 	text-transform: uppercase
 	align-items: center
 	position: fixed
-	right: 10%
+	right: 8%
 	top: 28px
 	z-index: 1000000
+	+media-breakpoint-down(lg)
+		right: 20px
+		position: static
+	+media-breakpoint-down(md)
+		position: absolute
+		top: -90px
+	+media-breakpoint-down(xs)
+		top: -76px
+		right: 5px
+		transform: scale(.8)
 	.hamburger
 		margin-left: -15px
 		margin-top: -10px
 		.hamburger-inner
 			background-color: $lightBlue
+			+media-breakpoint-down(md)
+				background-color: #fff
 			&:after, &:before
 				background-color: $lightBlue
+				+media-breakpoint-down(md)
+					background-color: #fff
 	&__text
 		margin-top: -17px
 		font-size: 13px
@@ -293,15 +415,18 @@ body
 	z-index: 1000
 	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
 	z-index: 10000000000
+	+media-breakpoint-down(md)
+		top: 90px
+		right: 27px
+	+media-breakpoint-down(xs)
+		right: 0
+		padding: 20px 10px 10px 10px
 	&__list
 		list-style-type: none
 		padding: 0
 	&__item
 		margin-bottom: 15px
 		position: relative
-		&:hover
-			.menu__submenu
-				display: block!important
 	&__link
 		color: #000
 		transition: all .3s ease
@@ -310,7 +435,7 @@ body
 			text-decoration: none
 	&__submenu
 		margin-top: 15px
-		display: none
+		display: block
 	&__sub-item
 		list-style-type: none
 	&__sub-link
@@ -339,11 +464,15 @@ body
 		z-index: 100
 		margin-left: -169px
 		margin-top: 140px
+		+media-breakpoint-down(md)
+			display: none
 	&__arrows
 		position: absolute
-		top: 35%
+		top: 8%
 		left: 0
 		width: 100%
+		+media-breakpoint-down(md)
+			top: 391px
 		.container
 			position: relative
 		.y_arrow
@@ -361,6 +490,13 @@ body
 			font-size: 28px
 			cursor: pointer
 			transition: all .3s ease
+			+media-breakpoint-down(sm)
+				font-size: 15px
+				border: 2px solid #fff
+				width: 25px
+				height: 25px
+				padding-top: 12px
+				padding-left: 4px
 			.fa
 				color: #fff
 			&:hover
@@ -369,11 +505,19 @@ body
 					color: $lightBlue
 		.y_prevArrow
 			left: -10px
+			+media-breakpoint-down(lg)
+				left: 15px
+			+media-breakpoint-down(sm)
+				left: 5px
 			.fa
 				height: 29px
 				width: 13px
 		.y_nextArrow
 			right: -10px
+			+media-breakpoint-down(lg)
+				right: 15px
+			+media-breakpoint-down(sm)
+				right: 5px
 			.fa
 				height: 29px
 				width: 7px
@@ -385,10 +529,16 @@ body
 		height: 640px
 		width: 100%
 		position: relative
+		+media-breakpoint-down(md)
+			height: 280px
+			position: absolute
+			top: 0
+			left: 0
 		img
 			width: 100%
 			height: 100%
 			object-fit: cover
+
 	&__info
 		position: absolute
 		top: 0
@@ -396,34 +546,69 @@ body
 		width: 100%
 		height: 100%
 		color: #fff
+		+media-breakpoint-down(md)
+			position: static
+			background: $blue
+			.container
+				padding: 0
 	&__info-inner
 		position: relative
 		padding-left: 75px
+		+media-breakpoint-down(md)
+			text-align: center
+			padding: 0 0 20px 0
+			background: rgba(0, 0, 0, .6)
 	&__title
 		font-weight: 800
 		font-size: 91px
 		line-height: 95px
 		margin-top: 100px
+		+media-breakpoint-down(md)
+			margin-top: 0
+			font-size: 60px
+			line-height: 65px
+		+media-breakpoint-down(xs)
+			font-size: 40px
+			line-height: 45px
 	&__text
 		font-size: 30px
 		font-weight: 500
+		+media-breakpoint-down(md)
+			font-size: 20px
+			padding: 10px 0
 	&__old-price
 		font-size: 30px
 		font-style: italic
 		text-decoration: line-through
 		position: absolute
 		top: 129px
-		left: 248px
+		left: 350px
+		+media-breakpoint-down(md)
+			position: static
+			font-size: 25px
+			right: 302px
+			top: 157px
+		+media-breakpoint-down(md)
+			left: auto
+			right: 248px
+			top: 144px
 	&__price
 		font-size: 54px
 		font-weight: 700
 		margin-top: 10px
+		+media-breakpoint-down(md)
+			font-size: 35px
+			margin-top: 0
+			line-height: 45px
 	&__btn
 		background-color: $malina
 		margin: 0
 		margin-top: 20px
 		position: relative
 		z-index: 100000
+		+media-breakpoint-down(md)
+			margin: 15px auto 0 auto
+			height: 50px
 		&:hover
 			background-color: darken($malina, 10%)
 
@@ -446,12 +631,28 @@ body
 
 // Sect-services
 .sect-services
-	background: url(../img/@2x/bg/cells.png) no-repeat left -50px top -150px, url('../img/@2x/bg/planet.png') no-repeat right top 130px
+	background: url(../img/@2x/bg/cells.png) no-repeat left -50px top -150px, url('../img/@2x/bg/planet_empty.png') no-repeat right -330px top 130px
+	position: relative
+	&__circle
+		position: absolute
+		top: 200px
+		right: 100px
+		+media-breakpoint-down(md)
+			display: none
+		.eyes-wrapper__inner__eye__iris
+			width: 80px
+			height: 80px
 .advantage
 		height: 0
+		+media-breakpoint-down(md)
+			height: auto
+			padding-top: 20px
 .advantage-inner
 	display: flex
 	justify-content: space-between
+	+media-breakpoint-down(md)
+		flex-direction: column
+		align-items: center
 .advantage-item
 	position: relative
 	background: #fff
@@ -465,6 +666,9 @@ body
 	display: flex
 	justify-content: center
 	align-items: center
+	+media-breakpoint-down(md)
+		margin-top: 0
+		margin-bottom: 20px
 	&__text
 		max-width: 185px
 		font-weight: bold
@@ -477,6 +681,11 @@ body
 	justify-content: space-between
 	flex-wrap: wrap
 	height: 480px
+	+media-breakpoint-down(lg)
+		height: auto
+		justify-content: center
+		align-items: center
+		flex-direction: column
 
 .services-row--one
 	.services-item
@@ -486,6 +695,12 @@ body
 				position: absolute
 				top: 0
 				left: 13px
+				+media-breakpoint-down(md)
+					width: 125px
+					position: absolute
+					top: 53px
+					right: 9px
+					left: auto
 			&:hover
 				img
 					width: 125px
@@ -499,6 +714,12 @@ body
 				position: absolute
 				top: 11px
 				left: -1px
+				+media-breakpoint-down(md)
+					width: 125px
+					position: absolute
+					top: 99px
+					right: 7px
+					left: auto
 			&:hover
 				img
 					width: 125px
@@ -512,6 +733,12 @@ body
 				position: absolute
 				top: -4px
 				left: 20px
+				+media-breakpoint-down(md)
+					width: 128px
+					position: absolute
+					top: 54px
+					right: 0px
+					left: auto
 			&:hover
 				img
 					width: 128px
@@ -527,6 +754,12 @@ body
 				position: absolute
 				top: 24px
 				left: -21px
+				+media-breakpoint-down(md)
+					width: 180px
+					position: absolute
+					top: 105px
+					right: -20px
+					left: auto
 			&:hover
 				img
 					width: 180px
@@ -540,6 +773,12 @@ body
 				position: absolute
 				top: 0px
 				left: -21px
+				+media-breakpoint-down(md)
+					width: 196px
+					position: absolute
+					top: 73px
+					right: -20px
+					left: auto
 			&:hover
 				img
 					width: 196px
@@ -553,6 +792,12 @@ body
 				position: absolute
 				top: 7px
 				left: 7px
+				+media-breakpoint-down(md)
+					width: 131px
+					position: absolute
+					top: 72px
+					right: 7px
+					left: auto
 			&:hover
 				img
 					width: 131px
@@ -569,6 +814,12 @@ body
 				position: absolute
 				top: -24px
 				left: 13px
+				+media-breakpoint-down(md)
+					width: 133px
+					position: absolute
+					top: 35px
+					right: 5px
+					left: auto
 			&:hover
 				img
 					width: 133px
@@ -582,6 +833,12 @@ body
 				position: absolute
 				top: -12px
 				left: -3px
+				+media-breakpoint-down(md)
+					width: 133px
+					position: absolute
+					top: 51px
+					right: 17px
+					left: auto	
 			&:hover
 				img
 					width: 133px
@@ -595,6 +852,12 @@ body
 				position: absolute
 				top: -1px
 				left: 21px
+				+media-breakpoint-down(md)
+					width: 95px
+					position: absolute
+					top: 68px
+					right: 29px
+					left: auto
 			&:hover
 				img
 					width: 95px
@@ -609,18 +872,20 @@ body
 	margin-bottom: 22px
 	padding: 10px
 	overflow: hidden
-	transition: all .3s ease
+	transition: all .6s ease
 	background: #fff
 	display: flex
 	align-items: center
-	&:hover
+	+media-breakpoint-down(md)
 		position: relative
 		z-index: 1000
-		height: 220px
+		height: 275px
 		display: flex
 		flex-direction: column
 		padding-left: 156px
 		overflow: hidden
+		&:hover
+			height: 275px!important
 		.services-item__img
 			width: 300px
 			height: 300px
@@ -630,10 +895,43 @@ body
 		.services-item__list
 			display: block
 		.services-item__title
-			margin-top: 18px
+			margin-top: 10px
 			margin-left: -2px
 			font-size: 20px
 			line-height: 22px
+			+media-breakpoint-down(md)
+				margin-bottom: 10px
+	+media-breakpoint-down(xs)
+		width: 300px
+		padding: 10px
+		background: $lightBlue
+		height: auto!important
+		border-radius: 5px
+	&:hover
+		position: relative
+		z-index: 1000
+		height: 220px
+		display: flex
+		flex-direction: column
+		padding-left: 156px
+		overflow: hidden
+		+media-breakpoint-down(xs)
+			height: auto!important
+		.services-item__img
+			width: 300px
+			height: 300px
+			position: absolute
+			top: -31px
+			left: -156px
+		.services-item__list
+			display: block
+		.services-item__title
+			margin-top: 10px
+			margin-left: -2px
+			font-size: 20px
+			line-height: 22px
+		+media-breakpoint-down(xs)
+			padding-left: 0
 	a
 		color: #000
 		display: flex
@@ -643,15 +941,22 @@ body
 		font-size: 22px
 		max-width: 205px
 		margin-left: 20px
+		+media-breakpoint-down(xs)
+			z-index: 1
 	&__list
 		display: none
 		margin-top: 5px
 		padding-left: 18px
 		list-style-type: none
+		+media-breakpoint-down(xs)
+			padding-left: 0
+			width: 100%
 		li
 			font-size: 16px
 			position: relative
 			font-weight: normal
+			+media-breakpoint-down(md)
+				margin-bottom: 10px
 			&:before
 				content: ''
 				position: absolute
@@ -660,6 +965,11 @@ body
 				height: 1px
 				width: 11px
 				background-color: $lightBlue
+			a
+				line-height: 18px
+				+media-breakpoint-down(xs)
+					display: block
+					width: 100%
 	&__img
 		width: 100px
 		height: 100px
@@ -667,6 +977,8 @@ body
 		border-radius: 100%
 		position: relative
 		transition: all .3s ease
+		+media-breakpoint-down(xs)
+			display: none
 		img
 			width: 100px
 
@@ -680,11 +992,17 @@ body
 	background-attachment: fixed
 	background-position: top right 100px
 	background-repeat: no-repeat
+	+media-breakpoint-down(lg)
+		background-image: none
+		height: auto
+		padding-bottom: 0px
 	&__jaws
 		position: absolute
 		bottom: -40px
 		right: 35px
 		max-width: 296px
+		+media-breakpoint-down(lg)
+			display: none
 		img
 			width: 100%
 			height: 100%
@@ -698,12 +1016,25 @@ body
 		box-shadow: 0px 7px 23.976px -10px rgba(0, 0, 0, 0.75) 
 		border-radius: 100%
 		z-index: 100
+		+media-breakpoint-down(md)
+			display: none
 	&__btn
 		margin: 80px auto
+		+media-breakpoint-down(md)
+			margin: 10px auto 20px auto
 	&__inner
 		position: relative
 	&__img
 		margin-left: 165px
+		width: 636px
+		height: 370px
+		+media-breakpoint-down(lg)
+			margin: 0 auto
+			width: 100%
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
 	&__info
 		position: absolute
 		top: -80px
@@ -718,6 +1049,12 @@ body
 		justify-content: center
 		flex-direction: column
 		padding-left: 30px
+		+media-breakpoint-down(lg)
+			position: static
+			margin: 40px auto
+		+media-breakpoint-down(sm)
+			width: 300px
+			height: 300px
 		a
 			color: #fff
 	&__adress
@@ -735,6 +1072,7 @@ body
 			font-size: 18px
 			position: relative
 			cursor: text
+			cursor: pointer
 			&:after
 				content: "\f0da"
 				font-family: FontAwesome
@@ -766,6 +1104,8 @@ body
 .sect-gallery
 	padding-bottom: 120px
 	background: #f7f7f7
+	+media-breakpoint-down(md)
+			padding-bottom: 30px	
 	&__inner
 		position: relative
 		max-width: 920px
@@ -785,11 +1125,15 @@ body
 		box-shadow: 0px 7px 23.976px -10px rgba(0, 0, 0, 0.75) 
 		border-radius: 100%
 		z-index: 100
+		+media-breakpoint-down(md)
+			display: none
 	&__h2
 		padding-top: 30px
 .gallery-slider
 	.gallery-slide
 		height: 386px
+		+media-breakpoint-down(sm)
+			height: 300px
 		img
 			width: 100%
 			height: 100%
@@ -797,6 +1141,8 @@ body
 
 .gallery-dotted
 	margin: 26px -15px 18px -15px
+	+media-breakpoint-down(lg)
+		display: none
 	&__item
 		width: 160px
 		height: 100px
@@ -812,6 +1158,10 @@ body
 	bottom: 0
 	left: 0
 	width: 100%
+	+media-breakpoint-down(lg)
+		bottom: 110px
+	+media-breakpoint-down(md)
+		bottom: 70px
 	.container
 		position: relative
 	.g_arrow
@@ -829,19 +1179,38 @@ body
 		font-size: 28px
 		cursor: pointer
 		transition: all .3s ease
+		+media-breakpoint-down(lg)
+			background: $lightBlue
+		+media-breakpoint-down(sm)
+			font-size: 15px
+			border: 2px solid #fff
+			width: 25px
+			height: 25px
+			padding-top: 12px
+			padding-left: 4px
 		.fa
 			color: $accent
+			+media-breakpoint-down(lg)
+				color: #fff
 		&:hover
 			background-color: $lightBlue
 			.fa
 				color: #fff
 	.g_prevArrow
 		left: -56px
+		+media-breakpoint-down(lg)
+			left: 10px
+		+media-breakpoint-down(md)
+			left: 5px	
 		.fa
 			height: 29px
 			width: 13px
 	.g_nextArrow
 		right: -56px
+		+media-breakpoint-down(lg)
+			right: 10px
+		+media-breakpoint-down(md)
+			right: 5px	
 		.fa
 			height: 29px
 			width: 7px
@@ -874,6 +1243,8 @@ body
 	background-size: cover
 	padding: 70px 10px 58px 10px
 	position: relative
+	+media-breakpoint-down(sm)
+		padding: 30px 10px
 	&__cell-bg
 		position: absolute
 		background: url('../img/@2x/bg/cells-form-left.png') no-repeat top 90px left -100px, url('../img/@2x/bg/cells-form-right.png') no-repeat bottom 100px right -40px
@@ -881,6 +1252,8 @@ body
 		left: 0
 		width: 100%
 		height: 100%
+		+media-breakpoint-down(md)
+			display: none
 .form
 	max-width: 542px
 	border: 5px solid #fff
@@ -891,10 +1264,14 @@ body
 	width: 100%
 	padding: 30px 85px 30px 85px
 	color: #fff
+	+media-breakpoint-down(sm)
+		padding: 15px
 	&__bg-circle
 		position: absolute
 		left: 4px
 		top: -166px
+		+media-breakpoint-down(md)
+			display: none
 		.eyes-wrapper__inner__eye__iris
 			width: 100px
 			height: 100px
@@ -905,14 +1282,20 @@ body
 		font-weight: 500
 		text-align: center
 		margin: 5px 0 10px
+		+media-breakpoint-down(md)
+			font-size: 22px
 	&__price
 		font-size: 43px
 		font-weight: bold
+		+media-breakpoint-down(md)
+			font-size: 28px
 	&__old-price
 		font-size: 27px
 		font-weight: 500
 		text-decoration: line-through
 		margin-left: 5px
+		+media-breakpoint-down(md)
+			font-size: 20px
 	.form__p
 		color: #363636
 		text-align: center
@@ -940,6 +1323,8 @@ body
 		margin: 0
 		text-align: center
 		padding: 0
+		+media-breakpoint-down(md)
+			font-size: 35px
 	input, textarea
 		border: 2px solid #e2e2e2	
 		padding: 9px 9px 9px 30px
@@ -977,6 +1362,8 @@ body
 			border-radius: 30px
 			background: rgba(255, 255, 255, .5)
 			margin-bottom: 14px
+			+media-breakpoint-down(xs)
+				height: 40px
 label
 	font-size: 13px
 textarea
@@ -999,14 +1386,20 @@ button.mfp-close
 	position: relative
 	font-weight: 200
 	cursor: pointer
+	+media-breakpoint-down(xs)
+		padding-left: 34px
 	&__underline
 		text-decoration: underline
 		font-weight: 500
 		display: block
 		cursor: pointer
+		color: #fff!important
+		&:hover
+			text-decoration: none
 	label
 		line-height: 16px
 		cursor: pointer
+		+media-breakpoint-down(xs)
 	input
 		display: none
 		cursor: pointer
@@ -1074,11 +1467,17 @@ button.mfp-close
 		width: 100%
 		height: 100%
 		object-fit: cover
+		+media-breakpoint-down(lg)
+			width: 160px
+			height: auto
+			margin: 0 auto
 .clients__arrows
 	position: absolute
 	top: 35%
 	left: 0
 	width: 100%
+	+media-breakpoint-down(sm)
+		top: 60px
 	.container
 		position: relative
 	.c_arrow
@@ -1096,19 +1495,37 @@ button.mfp-close
 		font-size: 28px
 		cursor: pointer
 		transition: all .3s ease
+		+media-breakpoint-down(sm)
+			font-size: 15px
+			border: 2px solid $accent
+			background: $accent
+			width: 25px
+			height: 25px
+			padding-top: 12px
+			padding-left: 4px
 		.fa
 			color: $accent
+			+media-breakpoint-down(sm)
+				color: #fff
 		&:hover
 			background-color: $accent
 			.fa
 				color: #fff
 	.c_prevArrow
 		left: -60px
+		+media-breakpoint-down(lg)
+			left: 10px
+		+media-breakpoint-down(sm)
+			left: 5px
 		.fa
 			height: 29px
 			width: 13px
 	.c_nextArrow
 		right: -60px
+		+media-breakpoint-down(lg)
+			right: 10px
+		+media-breakpoint-down(sm)
+			right: 5px
 		.fa
 			height: 29px
 			width: 7px
@@ -1120,20 +1537,33 @@ button.mfp-close
 	padding: 30px 0 50px 0
 	color: #fff
 	font-size: 14px
+	+media-breakpoint-down(md)
+		padding: 20px 0
 	a
 		color: #fff
 	&__inner
 		display: flex
 		justify-content: space-between
+		+media-breakpoint-down(lg)
+			flex-direction: column
+			align-items: center
 	&__logo
 		img
 			display: block
+		+media-breakpoint-down(lg)
+			margin-bottom: 20px
+			order: 0
 	&__copy
 		font-size: 12.5px
 		display: block
 		margin-top: 15px
 		color: #3e8fe6!important
+		+media-breakpoint-down(lg)
+			order: 4
 	&__menu
+		+media-breakpoint-down(lg)
+			text-align: center
+			display: none
 	&__list
 		padding-left: 0
 	&__item
@@ -1141,9 +1571,18 @@ button.mfp-close
 		margin-bottom: 15px
 	&__contacts
 		display: flex
+		+media-breakpoint-down(lg)
+			order: 2
+		+media-breakpoint-down(xs)
+			display: flex
+			flex-direction: column
+			align-items: center
 	&__adress
 		max-width: 160px
 		position: relative
+		+media-breakpoint-down(xs)
+			max-width: 200px
+			margin-bottom: 20px
 		.adress__town
 		 	margin-bottom: 3px
 		.adress__location_icon
@@ -1153,8 +1592,13 @@ button.mfp-close
 		.adress__location
 			padding-left: 0
 	&__phones
+		+media-breakpoint-down(xs)
+			width: 215px
 		.phones__number
 			margin-bottom: 3px
+			&:last-child
+				+media-breakpoint-down(md)
+					padding-left: 24px
 	&__developer
 		display: flex
 		align-items: center
@@ -1166,8 +1610,17 @@ button.mfp-close
 //About us page
 .promo
 	height: 200px
-	background: url('../img/_src/bg/about_us_bg.jpg') no-repeat center center
-	background-size: cover
+	position: relative
+	&_bg
+		position: absolute
+		top: 0
+		left: 0
+		height: 200px
+		width: 100%
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
 
 .breadcrumb
 	display: flex
@@ -1179,6 +1632,8 @@ button.mfp-close
 	font-size: 14px	
 	position: relative
 	color: #fff
+	+media-breakpoint-down(lg)
+		margin-left: 0
 	&--dark
 		color: #000
 		a
@@ -1197,11 +1652,15 @@ button.mfp-close
 .about_clinic
 	position: relative
 	background: url('../img/@2x/bg/planet.png') no-repeat top 50px right
+	+media-breakpoint-down(lg)
+		background: none
 	&_left_bg
 		position: absolute
 		top: 100px
 		left: -110px
 		transform: rotate(-64deg)
+		+media-breakpoint-down(lg)
+			display: none
 	&_desc
 		font-weight: bold
 		font-size: 18px
@@ -1210,6 +1669,12 @@ button.mfp-close
 		margin-top: 30px
 		display: flex
 		justify-content: space-between
+		+media-breakpoint-down(lg)
+		flex-direction: column
+		align-items: center
+	&_footer
+		+media-breakpoint-down(lg)
+			margin-top: 30px
 
 .how_we_work
 	&__title
@@ -1224,6 +1689,8 @@ button.mfp-close
 		width: 588px
 		display: flex
 		flex-wrap: wrap
+		+media-breakpoint-down(md)
+			width: auto
 		li
 			position: relative
 			width: 245px
@@ -1237,6 +1704,17 @@ button.mfp-close
 				width: 12px
 				height: 2px
 				background-color: $lightBlue
+			+media-breakpoint-down(md)
+				margin: 0 auto 10px auto
+
+.about_licences_slide__img
+	width: 164px
+	height: 216px
+	margin: 0 auto
+	img
+		width: 	100%
+		height: 	100%
+		object-fit: cover
 
 .about_licenses
 	position: relative
@@ -1244,14 +1722,21 @@ button.mfp-close
 		font-size: 24px
 		font-weight: bold
 		margin-bottom: 20px
+		+media-breakpoint-down(md)
+			text-align: center
 	&_slider
 		width: 360px
 		height: 220px
 	&_slide
 		height: 220px
-		img
-			width: 100%
-			height: 100%
+		&__img
+			width: 164px
+			height: 216px
+			display: none
+			img
+				width: 164px
+				height: 216px
+				object-fit: cover
 	&_arrows
 		position: absolute
 		top: 137px
@@ -1262,7 +1747,7 @@ button.mfp-close
 		.l_arrow
 			position: absolute
 			top: 0
-			z-index: 10000
+			z-index: 1000
 			width: 38px
 			height: 38px
 			border: 3px solid $accent
@@ -1275,6 +1760,14 @@ button.mfp-close
 			font-size: 28px
 			cursor: pointer
 			transition: all .3s ease
+			+media-breakpoint-down(sm)
+				font-size: 15px
+				border: 2px solid $accent
+				background: $accent
+				width: 25px
+				height: 25px
+				padding-top: 12px
+				padding-left: 4px
 			.fa
 				color: #fff
 			&:hover
@@ -1283,11 +1776,15 @@ button.mfp-close
 					color: $lightBlue
 		.l_prevArrow
 			left: -70px
+			+media-breakpoint-down(md)
+				left: 25px
 			.fa
 				height: 29px
 				width: 13px
 		.l_nextArrow
 			right: -70px
+			+media-breakpoint-down(md)
+				right: 25px
 			.fa
 				height: 29px
 				width: 7px
@@ -1306,14 +1803,22 @@ button.mfp-close
 	height: 384px
 	position: relative
 	padding-top: 80px
-	background: url('../img/@2x/bg/cells-director.png')
+	background: url('../img/@2x/bg/cells-map.png')
 	background-attachment: fixed
 	background-position: top right -400px
 	background-repeat: no-repeat
+	+media-breakpoint-down(md)
+		height: 100%		
+		padding-top: 30px
 	.gutter
 		background: $lightBlue
+		+media-breakpoint-down(lg)
+			display: none
+	&__inner
 	&_wrap
 		display: flex
+		+media-breakpoint-down(md)
+			flex-direction: column
 	&_info
 		padding: 40px 0 100px 90px
 		color: #fff
@@ -1321,6 +1826,9 @@ button.mfp-close
 		max-width: 624px
 		height: 100%
 		background: $lightBlue
+		+media-breakpoint-down(md)
+			max-width: 100%
+			padding: 30px 10px 10px 10px
 		p
 			margin-bottom: 0
 			line-height: 18px
@@ -1338,20 +1846,34 @@ button.mfp-close
 		&__text
 			height: 164px
 			overflow: hidden
+			+media-breakpoint-down(md)
+				height: 100%
 	&_sing
 		float: right
 		padding-top: 20px
 		position: relative
 		z-index: 100
+		+media-breakpoint-down(md)
+			float: none
 	&_img
 		position: relative
 		height: 304px
 		width: 100px
 		background: $lightBlue
+		+media-breakpoint-down(md)
+			height: 100%
+			width: 100%
 		img
 			position: absolute
 			top: -53px
 			left: -62px
+			+media-breakpoint-down(md)
+				position: relative
+				top: 8px
+				left: 0
+			+media-breakpoint-down(xs)
+				width: 100%
+				height: 100%
 
 // Advantage section
 .sect-advantage
@@ -1359,6 +1881,8 @@ button.mfp-close
 	background: url('../img/@2x/bg/advantage_bg.jpg') no-repeat center
 	background-size: cover
 	position: relative
+	+media-breakpoint-down(xs)
+		padding-bottom: 0
 	&:before
 		content: ''
 		position: absolute
@@ -1367,6 +1891,8 @@ button.mfp-close
 		width: 388px
 		height: 415px
 		background: url('../img/@2x/bg/planet-full.png') no-repeat center
+		+media-breakpoint-down(lg)
+			display: none
 	&:after
 		content: ''
 		position: absolute
@@ -1375,6 +1901,8 @@ button.mfp-close
 		width: 255px
 		height: 367px
 		background: url('../img/@2x/bg/cells-form-right.png') no-repeat center
+		+media-breakpoint-down(lg)
+			display: none
 .sect-advantage-items
 	display: flex
 	justify-content: space-between
@@ -1385,6 +1913,8 @@ button.mfp-close
 	text-align: center
 	width: 33%
 	margin-bottom: 20px
+	+media-breakpoint-down(sm)
+		width: 100%
 	&__text
 		height: 60px
 		overflow: hidden
@@ -1397,10 +1927,15 @@ button.mfp-close
 
 // Specialists section
 .sect-specialists
+	height: 1339px
+	+media-breakpoint-down(lg)
+		height: 100%
 .specialist_inner
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
+	+media-breakpoint-down(lg)
+		justify-content: center
 .specialist_item
 	max-width: 350px
 	background: #fff
@@ -1408,6 +1943,11 @@ button.mfp-close
 	margin-bottom: 50px
 	cursor: pointer
 	transition: .5s transform ease
+	&:nth-child(odd)
+		+media-breakpoint-down(lg)
+			margin-right: 30px
+		+media-breakpoint-down(sm)
+			margin-right: 0
 	&:hover
 		transform: translateY(-40px)
 		border: 1px solid $accent
@@ -1445,6 +1985,8 @@ button.mfp-close
 		top: 27px
 		right: -100px
 		transform: rotate(-37deg)
+		+media-breakpoint-down(md)
+			display: none
 .akcii_slider .slick-dots
 	display: flex
 	justify-content: center
@@ -1464,6 +2006,12 @@ button.mfp-close
 	.slick-active
 		background: $lightBlue
 
+.akcii_slide
+	img
+		margin: 0 auto
+		+media-breakpoint-down(xs)
+			width: 300px
+
 // News section
 
 .a-news
@@ -1472,6 +2020,10 @@ button.mfp-close
 	flex-wrap: wrap
 	justify-content: space-between
 	height: 840px 
+	+media-breakpoint-down(lg)
+		height: auto
+		justify-content: center
+
 .a-new
 	max-width: 350px
 	width: 100%
@@ -1479,9 +2031,20 @@ button.mfp-close
 	margin-bottom: 35px
 	cursor: pointer
 	transition: .5s transform ease
+	+media-breakpoint-down(lg)
+		max-width: 48%
+	+media-breakpoint-down(sm)
+		max-width: 100%	
+	&:nth-child(odd)
+		+media-breakpoint-down(lg)
+			margin-right: 30px
+		+media-breakpoint-down(sm)
+			margin-right: 0
 	&:hover
 		transform: translateY(-40px)
 		border: 1px solid $accent
+		+media-breakpoint-down(lg)
+			transform: translateY(0)
 	a
 		color: #000
 		&:hover
@@ -1530,6 +2093,9 @@ button.mfp-close
 		justify-content: center
 		list-style-type: none	
 		margin-bottom: 50px
+		padding-left: 0
+		+media-breakpoint-down(md)
+			margin-bottom: 30px
 		li
 			display: flex
 			align-items: center
@@ -1571,3 +2137,580 @@ button.mfp-close
 				background-color: $lightBlue
 				.fa
 					color: #fff
+
+
+//Contacts page
+.contacts-inner
+	display: flex
+	padding-top: 30px
+	position: relative
+	background: url('../img/@2x/bg/cells-map.png') no-repeat top 250px right -400px
+	background-attachment: fixed
+	background-repeat: no-repeat
+	+media-breakpoint-down(md)
+		flex-direction: column-reverse
+		align-items: center
+		padding-top: 0
+		background: none
+.contact-map
+	width: 50%
+	height: 416px
+	padding-right: 50px
+	position: relative
+	+media-breakpoint-down(md)
+		padding-right: 0
+		width: 100%
+	+media-breakpoint-down(md)
+		height: 300px
+	&__bg-circle
+		position: absolute
+		top: -7px
+		right: 94px
+		z-index: 100
+		width: 80px
+		height: 80px
+		background: linear-gradient(-124deg, rgba(167, 198, 232, .93) 0%, rgba(255,2255,255,1) 110%)
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75) 
+		border-radius: 100%
+		z-index: 100
+		+media-breakpoint-down(md)
+			display: none
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		border-top-right-radius: 200px
+		border-bottom-right-radius:: 200px
+.contact-info
+	margin-top: 30px
+	font-size: 18px
+	.adress__dinamik_town
+		font-weight: 800
+		margin-left: 10px
+	.adress__location
+		padding-left: 32px
+		&_icon
+			color: $accent!important
+	.phones
+		margin: 25px 0 20px 0
+		font-weight: 500
+		&__icon
+			color: $accent!important
+	.mail
+			display: flex	
+			align-items: center
+			margin-bottom: 20px
+			.fa
+					color: $accent
+					font-size: 20px
+					margin-right: 16px	
+			a
+				color: #000
+				font-weight: 500
+				&:hover
+					text-decoration: none
+	.contact-director
+		max-width: 288px
+		padding-left: 36px
+		+media-breakpoint-down(md)
+			margin-bottom: 30px
+
+
+// Card page
+.card
+	&_desc
+		position: relative
+		font-size: 18px
+		font-weight: bold
+		p
+			margin-bottom: 0
+			max-width: 826px
+	&__btn
+		position: absolute
+		top: -100px
+		right: 0
+		+media-breakpoint-down(md)
+			position: static
+			margin: 20px auto
+	&_img
+		width: 100%
+		height: 100%
+		height: 320px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&_promo
+		display: flex
+		margin-top: 40px
+		height: 320px
+		+media-breakpoint-down(md)
+			flex-direction: column
+			height: auto
+	&_info
+		max-width: 542px
+		margin-left: 30px
+		line-height: 1.2
+		height: 320px
+		+media-breakpoint-down(md)
+			max-width: 100%
+			height: auto
+			margin: 20px 0
+	&_header
+		font-size: 20px
+		font-weight: 500
+		margin-bottom: 20px
+	&_body
+		margin-bottom: 15px
+	&_footer
+		display: -webkit-flex
+		justify-content: space-between
+		position: relative
+		.card_arrow
+			z-index: 10000
+			width: 38px
+			height: 38px
+			border: 3px solid $lightBlue
+			color: $lightBlue
+			background: $lightBlue
+			border-radius: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 28px
+			cursor: pointer
+			transition: all .3s ease
+			.fa
+				color: #fff
+			&:hover
+				background-color: #fff
+				border-color: $lightBlue
+				.fa
+					color: $lightBlue
+		.card_prevArrow
+			left: -10px
+			+media-breakpoint-down(md)
+				position: absolute
+				top: 5px
+				left: 0
+			.fa
+				height: 29px
+				width: 13px
+		.card_nextArrow
+			right: -10px
+			+media-breakpoint-down(md)
+				position: absolute
+				top: 5px
+				right: 0
+			.fa
+				height: 29px
+				width: 7px
+	&_slider
+		max-width: 400px
+		margin: 0 -15px
+		+media-breakpoint-down(md)
+			max-width: 100%
+	&_slide
+		width: 120px
+		height: 50px
+		padding: 0 15px
+		+media-breakpoint-down(md)
+		margin: 0 auto
+		img
+			width: 100%
+			height: 100%
+			object-fit: contain
+
+// Card-price section
+.card
+	position: relative
+.card__wrapper
+	background: url(../img/@2x/bg/cells-form-right.png) no-repeat bottom -100px right -120px
+	padding-bottom: 60px
+.card-price
+	max-width: 920px
+	margin: 80px auto 0 auto
+	+media-breakpoint-down(md)
+		margin: 30px auto 0 auto
+	&__title
+		text-align: center
+		font-weight: bold
+		font-size: 30px
+		margin-bottom: 30px
+		+media-breakpoint-down(sm)
+			font-size: 25px
+			line-height: 30px
+.card_table
+	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+	padding: 20px 14px 50px 14px
+	.card_item
+		display: flex
+		justify-content: space-between
+		font-size: 18px
+		margin-bottom: 20px
+		+media-breakpoint-down(xs)
+			border-bottom: 1px solid lightgray
+			&:last-child
+				border-bottom: none
+		> div
+			&:nth-child(1)
+				padding-left: 20px
+				padding-right: 10px
+				max-width: 700px
+				flex-shrink: 10
+				+media-breakpoint-down(xs)
+					padding-left: 0
+					font-size: 16px
+			&:nth-child(2)
+				padding-right: 20px
+				width: 110px
+				font-weight: 700
+		&:nth-child(1)
+			font-weight: 700
+			font-size: 20px
+			border-bottom: 1px solid $accent
+			padding-bottom: 15px
+
+
+.card__bg-circle
+	left: 14px
+	top: -51px
+	+media-breakpoint-down(md)
+		display: none
+.card_clinic_left_bg
+	position: absolute
+	top: 248px
+	left: -110px
+	transform: rotate(-64deg)
+	+media-breakpoint-down(md)
+		display: none
+.card_clinic_rigth_bg
+	position: absolute
+	top: 70px
+	right: 0
+	+media-breakpoint-down(md)
+		display: none
+
+
+// Reviews page
+.reviews
+	background: url('../img/@2x/bg/planet.png') no-repeat right top 20px
+	&__h1
+		margin-bottom: 0
+	&_slider
+		margin: 30px -10px 0 -10px
+	&_slide
+		margin: 100px 20px 0 0
+		width: 350px
+		height: 330px
+		background: #f7f7f7	
+		position: relative
+		text-align: center
+		padding: 0 10px
+		transition: .5s all ease
+		cursor: pointer
+		z-index: 1000
+		+media-breakpoint-down(sm)
+		margin: 100px 0 0 0
+		&:hover
+			transform: translateY(-20px)
+			box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+		&__img
+			width: 124px
+			height: 124px
+			border-radius: 100%
+			border: 5px solid $lightBlue
+			position: absolute
+			top: -62px
+			left: 50%
+			margin-left: -62px
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				border-radius: 100%
+		&__text
+			max-width: 275px
+			padding: 90px 0 20px 0
+			margin: 0 auto
+		&__name
+			font-weight: bold
+			color: $accent
+	.slick-dots
+		display: flex
+		justify-content: center
+		margin-top: 20px
+		padding-left: 0
+		li
+			list-style-type: none
+			width: 10px
+			height: 10px
+			border-radius: 100%
+			background: #d4d4d4
+			margin-right: 10px
+			cursor: pointer
+			&:last-child
+				margin-right: 0
+			button
+				display: none
+		.slick-active
+			background: $lightBlue
+
+// Reviews Video
+.reviews_video
+	padding: 75px 0 45px 0
+	background-image: url('../img/@2x/bg/cells-map.png')
+	background-attachment: fixed
+	background-position: top left -300px
+	background-repeat: no-repeat
+	+media-breakpoint-down(md)
+		padding: 30px 0 10px 0
+.reviews_video_slider
+	margin: 0 -15px
+	.slick-dots
+		display: flex
+		justify-content: center
+		margin-top: 20px
+		padding-left: 0
+		+media-breakpoint-down(sm)
+			margin-top: 0
+		li
+			list-style-type: none
+			width: 10px
+			height: 10px
+			border-radius: 100%
+			background: #d4d4d4
+			margin-right: 10px
+			cursor: pointer
+			&:last-child
+				margin-right: 0
+			button
+				display: none
+		.slick-active
+			background: $lightBlue
+
+.reviews_video_slide
+	padding: 0 15px
+	width: 350px
+	height: 250px
+	position: relative
+	transition: all .3s ease
+	&__promo
+		&:hover
+			.reviews_video_slide__img::after
+				background: #fff
+			.reviews_video_slide__play
+				background: $accent
+			.reviews_video_slide__play::after
+				border-left: 34px solid #fff	
+	&__name
+		text-align: center
+		font-weight: bold
+		position: absolute
+		bottom: 20px
+		left: 50%
+		margin-left: -181px
+		width: 100%
+		max-width: 360px
+		text-align: center
+	&__img
+		width: 362px
+		height: 194px
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -181px
+		cursor: pointer
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			background: $lightBlue
+			opacity: .7
+			transition: .3s all ease
+		img
+			width: 100%
+			height: 100%
+	&__play
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-top: -40px
+		margin-left: -40px
+		width: 80px
+		height: 80px
+		z-index: 1000
+		background: #fff
+		border-radius: 100%
+		transition: .3s all ease
+		&:after
+			content: ''
+			position: absolute
+			width: 30px
+			height: 20px	
+			top: 18px
+			left: 28px
+			border: 20px solid transparent
+			border-left: 34px solid $accent
+			transition: .3s all ease
+
+.active-video
+	.reviewsvideoslideimg
+		opacity: 0
+
+
+//Vacancii page
+.vacancii
+	margin-bottom: 30px
+	background: url('../img/@2x/bg/planet.png') no-repeat right top 10px
+	+media-breakpoint-down(sm)
+		background: none
+.vacancii_desc
+	font-weight: bold
+	max-width: 565px
+.vacancii_title
+	font-size: 24px
+	font-weight: 800
+	margin-bottom: 40px
+.vacancii_items
+	display: flex
+	flex-wrap: wrap
+.vacancii_item
+	width: 256px
+	height: 158px
+	box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.3)
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	align-items: center
+	margin-bottom: 20px
+	margin-right: 23px
+	transition: .5s all ease
+	cursor: pointer
+	z-index: 1000
+	+media-breakpoint-down(md)
+		width: 47%
+	+media-breakpoint-down(sm)
+		width: 100%
+		margin-right: 0!important
+	&:hover
+		transform: translateY(-20px)
+		box-shadow: 0px 7px 23.976px -7px rgba(0, 0, 0, 0.75)
+	&:nth-child(4n)
+		margin-right: 0
+		+media-breakpoint-down(lg)
+			margin-right: 23px
+	&:nth-child(3n)
+		+media-breakpoint-down(lg)
+			margin-right: 0
+		+media-breakpoint-down(md)
+			margin-right: 23px
+	&:nth-child(2n)
+		+media-breakpoint-down(md)
+			margin-right: 0
+	&__text
+		text-align: center
+		height: 44px
+		overflow: hidden
+
+.vacancii__form
+	background: url('../img/@2x/vacancii/vacancii_bg.jpg') no-repeat center
+	background-size: cover
+	height: 655px
+	width: 100%
+	padding-top: 50px
+	.container
+		+media-breakpoint-down(sm)
+			padding: 0
+	+media-breakpoint-down(md)
+		height: 100%
+		background: none
+		padding-top: 0
+	.form
+		width: 567px
+		height: 567px
+		border-radius: 100%
+		background: $accent
+		margin: 0
+		padding: 80px 10px 60px 10px
+		display: flex
+		align-items: center
+		position: relative
+		+media-breakpoint-down(md)
+			margin: 0 auto
+			width: 100%
+			border-radius: 0
+			padding: 30px 10px
+			height: auto
+		&__title
+			font-weight: bold
+			font-size: 30px
+			line-height: 34px
+			max-width: 292px
+			text-align: center
+		&__desc
+			font-size: 16px
+			line-height: 18px
+			text-transform: none
+			margin-top: 10px
+		.wrap-inpute
+			margin-top: 10px
+			input
+				width: 350px
+				border: 0
+				+media-breakpoint-down(sm)
+					width: 300px
+			&__item
+				width: 350px
+				+media-breakpoint-down(sm)
+					width: 300px
+		.input_file
+			display: none!important
+		.input_file_label
+			font-size: 18px
+			.fa
+				font-size: 25px
+				transform: scale(1,-1)
+				margin-right: 10px
+		.input-cheked
+			width: 350px
+			font-size: 14px
+			margin-top: 0
+			+media-breakpoint-down(sm)
+				width: 300px
+		&__btn
+			margin-top: 15px
+			font-size: 20px
+			height: 50px
+			+media-breakpoint-down(sm)
+				width: 300px
+				height: 40px
+
+// Politic page
+.polity
+	height: 400px
+	+media-breakpoint-down(md)
+		height: auto
+
+
+// Modal window media
+.modal-content
+	+media-breakpoint-down(sm)
+		width: 100%
+.success-window .h2
+	+media-breakpoint-down(sm)
+		padding: 30px 0
+		font-size: 25px
+.form-window__title
+	+media-breakpoint-down(sm)
+		font-size: 30px
+		line-height: 35px
+.close
+	+media-breakpoint-down(sm)
+		top: -6px
+		right: 20px
